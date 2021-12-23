@@ -16,11 +16,17 @@ input = "";
 
 let btnRemove = document.querySelector(".btnRemove");
 
-btnRemove.addEventListener("click", function ()
-{
-    input= input.replace(input.slice(-1), "");  
-     outPut.innerHTML = input;
-    })
+  btnRemove.addEventListener("click", function (){
+  suprimer();
+    });
+
+function suprimer (){
+  input= input.replace(input.slice(-1), "");  
+  outPut.innerHTML = input;
+}
+
+suprimer();
+
 
 // Afficher tout les elements dans le input 
 
@@ -111,7 +117,10 @@ document.addEventListener('keydown', e => {
         saisirNombre(".")
         break
         case '=':
-            calculTotal("=")
+            calculTotal("")
+            break
+            case 'Backspace':
+            suprimer()
             break
     }
 })
